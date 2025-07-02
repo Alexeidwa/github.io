@@ -1,172 +1,227 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме Алексея - QA-инженер</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .section {
-            background: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section h2 {
-            color: #007bff;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-        .section ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .section ul li {
-            margin-bottom: 10px;
-        }
-        .contact-info p {
-            margin: 5px 0;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        @media (max-width: 600px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме Алексея - QA Тестировщик</title>
+  <script src="https://unpkg.com/i18next@23.15.1/dist/umd/i18next.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #6b7280, #1f2937);
+      color: white;
+      border-radius: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .language-switcher select {
+      padding: 8px;
+      font-size: 1em;
+      border-radius: 5px;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    section h2 {
+      color: #1f2937;
+      border-bottom: 2px solid #6b7280;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+    ul li strong {
+      color: #1f2937;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Алексей</h1>
-            <p>Кандидат на позицию QA-инженера</p>
-        </header>
+  <div class="language-switcher">
+    <select id="language" onchange="changeLanguage()">
+      <option value="ru">Русский</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </div>
+  <header>
+    <h1 data-i18n="name">Алексей</h1>
+    <p data-i18n="title">QA Тестировщик (Python)</p>
+  </header>
+  <div class="container">
+    <section>
+      <h2 data-i18n="about">Обо мне</h2>
+      <p data-i18n="about_text">
+        Привет, меня зовут Алексей! Я начинающий QA тестировщик, увлеченный тестированием программного обеспечения с использованием Python. У меня нет профессионального опыта работы, но я активно изучал QA тестирование как теоретически, так и практически. Я стремлюсь применять свои знания в реальных проектах и развиваться в сфере IT.
+      </p>
+    </section>
+    <section>
+      <h2 data-i18n="skills">Навыки</h2>
+      <ul>
+        <li data-i18n="skill1"><strong>Язык программирования:</strong> Python</li>
+        <li data-i18n="skill2"><strong>Тестирование:</strong> Ручное тестирование, написание тест-кейсов</li>
+        <li data-i18n="skill3"><strong>Навыки:</strong> Анализ требований, внимательность к деталям</li>
+        <li data-i18n="skill4"><strong>Учеба:</strong> Теоретическое и практическое изучение QA</li>
+      </ul>
+    </section>
+    <section>
+      <h2 data-i18n="contact">Контакты</h2>
+      <ul>
+        <li data-i18n="email_label"><strong>Электронная почта:</strong> <a href="mailto:l57831490@gmail.com">l57831490@gmail.com</a></li>
+      </ul>
+    </section>
+  </div>
+  <script>
+    i18next.init({
+      lng: 'ru',
+      resources: {
+        ru: {
+          translation: {
+            name: 'Алексей',
+            title: 'QA Тестировщик (Python)',
+            about: 'Обо мне',
+            about_text: 'Привет, меня зовут Алексей! Я начинающий QA тестировщик, увлеченный тестированием программного обеспечения с использованием Python. У меня нет профессионального опыта работы, но я активно изучал QA тестирование как теоретически, так и практически. Я стремлюсь применять свои знания в реальных проектах и развиваться в сфере IT.',
+            skills: 'Навыки',
+            skill1: '<strong>Язык программирования:</strong> Python',
+            skill2: '<strong>Тестирование:</strong> Ручное тестирование, написание тест-кейсов',
+            skill3: '<strong>Навыки:</strong> Анализ требований, внимательность к деталям',
+            skill4: '<strong>Учеба:</strong> Теоретическое и практическое изучение QA',
+            contact: 'Контакты',
+            email_label: '<strong>Электронная почта:</strong> <a href="mailto:l57831490@gmail.com">l57831490@gmail.com</a>'
+          }
+        },
+        en: {
+          translation: {
+            name: 'Alexey',
+            title: 'QA Tester (Python)',
+            about: 'About Me',
+            about_text: 'Hello, my name is Alexey! I am a beginner QA tester passionate about software testing using Python. I have no professional work experience, but I have actively studied QA testing both theoretically and practically. I am eager to apply my knowledge in real projects and grow in the IT industry.',
+            skills: 'Skills',
+            skill1: '<strong>Programming Language:</strong> Python',
+            skill2: '<strong>Testing:</strong> Manual testing, writing test cases',
+            skill3: '<strong>Skills:</strong> Requirements analysis, attention to detail',
+            skill4: '<strong>Education:</strong> Theoretical and practical QA studies',
+            contact: 'Contact',
+            email_label: '<strong>Email:</strong> <a href="mailto:l57831490@gmail.com">l57831490@gmail.com</a>'
+          }
+        },
+        es: {
+          translation: {
+            name: 'Alexey',
+            title: 'Probador QA (Python)',
+            about: 'Sobre mí',
+            about_text: '¡Hola, mi nombre es Alexey! Soy un probador QA principiante apasionado por las pruebas de software utilizando Python. No tengo experiencia laboral profesional, pero he estudiado activamente las pruebas QA tanto teórica como prácticamente. Estoy ansioso por aplicar mis conocimientos en proyectos reales y crecer en la industria de TI.',
+            skills: 'Habilidades',
+            skill1: '<strong>Lenguaje de programación:</strong> Python',
+            skill2: '<strong>Pruebas:</strong> Pruebas manuales, escritura de casos de prueba',
+            skill3: '<strong>Habilidades:</strong> Análisis de requisitos, atención al detalle',
+            skill4: '<strong>Educación:</strong> Estudios teóricos y prácticos de QA',
+            contact: 'Contacto',
+            email_label: '<strong>Correo electrónico:</strong> <a href="mailto:l57831490@gmail.com">l57831490@gmail.com</a>'
+          }
+        },
+        fr: {
+          translation: {
+            name: 'Alexey',
+            title: 'Testeur QA (Python)',
+            about: 'À propos de moi',
+            about_text: 'Bonjour, je m\'appelle Alexey ! Je suis un testeur QA débutant passionné par les tests de logiciels à l\'aide de Python. Je n\'ai pas d\'expérience professionnelle, mais j\'ai étudié activement les tests QA sur le plan théorique et pratique. Je suis impatient d\'appliquer mes connaissances dans des projets réels et de progresser dans l\'industrie informatique.',
+            skills: 'Compétences',
+            skill1: '<strong>Langage de programmation :</strong> Python',
+            skill2: '<strong>Tests :</strong> Tests manuels, rédaction de cas de test',
+            skill3: '<strong>Compétences :</strong> Analyse des exigences, attention aux détails',
+            skill4: '<strong>Éducation :</strong> Études théoriques et pratiques en QA',
+            contact: 'Contact',
+            email_label: '<strong>Email :</strong> <a href="mailto:l57831490@gmail.com">l57831490@gmail.com</a>'
+          }
+        },
+        de: {
+          translation: {
+            name: 'Alexey',
+            title: 'QA-Tester (Python)',
+            about: 'Über mich',
+            about_text: 'Hallo, mein Name ist Alexey! Ich bin ein angehender QA-Tester, der leidenschaftlich an Softwaretests mit Python arbeitet. Ich habe keine berufliche Erfahrung, aber ich habe QA-Tests sowohl theoretisch als auch praktisch intensiv studiert. Ich bin bestrebt, mein Wissen in realen Projekten anzuwenden und in der IT-Branche zu wachsen.',
+            skills: 'Fähigkeiten',
+            skill1: '<strong>Programmiersprache:</strong> Python',
+            skill2: '<strong>Testen:</strong> Manuelles Testen, Erstellung von Testfällen',
+            skill3: '<strong>Fähigkeiten:</strong> Anforderungsanalyse, Liebe zum Detail',
+            skill4: '<strong>Ausbildung:</strong> Theoretische und praktische QA-Studien',
+            contact: 'Kontakt',
+            email_label: '<strong>E-Mail:</strong> <a href="mailto:l57831490@gmail.com">l57831490@gmail.com</a>'
+          }
+        }
+      }
+    }, function(err, t) {
+      updateContent();
+    });
 
-        <div class="section contact-info">
-            <h2>Контактная информация</h2>
-            <p><strong>Телефон:</strong> +7 (909) 829-98-50</p>
-            <p><strong>Email:</strong> l57831490@gmail.com</p>
-            <p><strong>Город:</strong> Комсомольск-на-Амуре</p>
-        </div>
+    function changeLanguage() {
+      const lang = document.getElementById('language').value;
+      i18next.changeLanguage(lang, () => {
+        updateContent();
+      });
+    }
 
-        <div class="section">
-            <h2>Цель</h2>
-            <p>Получение должности QA-инженера в компании Ozon, где я смогу применять свои теоретические знания и практические навыки в тестировании, а также развивать компетенции в автоматизации тестирования и работе с современными инструментами.</p>
-        </div>
-
-        <div class="section">
-            <h2>Ключевые навыки</h2>
-            <div class="skills-grid">
-                <div>
-                    <h3>Теоретическая база тестирования</h3>
-                    <ul>
-                        <li>Знание видов и типов тестирования (функциональное, регрессионное, smoke, интеграционное и др.)</li>
-                        <li>Понимание подходов к тестированию и ключевых терминов</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Практические навыки</h3>
-                    <ul>
-                        <li>Проведение ручного тестирования веб-приложений и сервисов</li>
-                        <li>Составление чек-листов, тест-кейсов и баг-репортов</li>
-                        <li>Генерация тестовой документации и внесение данных в Allure</li>
-                        <li>Актуализация тестовых сценариев</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Программирование</h3>
-                    <ul>
-                        <li>Базовые знания Python (написание простых скриптов, основы синтаксиса)</li>
-                        <li>Начальный опыт написания автотестов на Python (Pytest)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Инструменты и технологии</h3>
-                    <ul>
-                        <li>Опыт работы с Allure, Jira, TestRail (или аналогами)</li>
-                        <li>Базовые навыки работы с SQL (написание простых запросов)</li>
-                        <li>Теоретическое понимание работы с брокерами сообщений (Kafka, RabbitMQ)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Личные качества</h3>
-                    <ul>
-                        <li>Аналитическое мышление</li>
-                        <li>Внимательность к деталям</li>
-                        <li>Умение работать в команде</li>
-                        <li>Стремление к обучению</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Опыт</h2>
-            <ul>
-                <li>Проведение ручного тестирования веб-приложений (функциональное, smoke, регрессионное тестирование)</li>
-                <li>Составление чек-листов и тест-кейсов, внесение их в Allure</li>
-                <li>Создание баг-репортов в Jira, обеспечение их точности и полноты</li>
-                <li>Актуализация тестовых сценариев на основе изменений в продукте</li>
-                <li>Выполнение базовых SQL-запросов для проверки данных в базе</li>
-                <li>Написание простых автотестов на Python с использованием Pytest</li>
-                <li>Изучение технической документации и требований к продукту</li>
-                <li>Функциональное тестирование пользовательского интерфейса</li>
-                <li>Составление чек-листов и тест-кейсов для проверки корзины, оформления заказа и авторизации</li>
-                <li>Создание баг-репортов с описанием дефектов</li>
-                <li>Написание автотестов для проверки ключевых сценариев (например, авторизация)</li>
-                <li>Внесение тестовой документации в Allure для отчётности</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Дополнительная информация</h2>
-            <ul>
-                <li><strong>Языки:</strong> Русский (родной), Английский (уровень B1/B2, чтение технической документации)</li>
-                <li>Стремление развиваться в области автоматизации тестирования, изучение фреймворков Selenium, Pytest и инструментов CI/CD</li>
-                <li>Готовность к обучению новым технологиям и инструментам, включая работу с брокерами сообщений (Kafka, RabbitMQ)</li>
-            </ul>
-        </div>
-
-        <footer>
-            <p>© 2025 Алексей. Все права защищены.</p>
-        </footer>
-    </div>
+    function updateContent() {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        element.innerHTML = i18next.t(element.dataset.i18n);
+      });
+    }
+  </script>
 </body>
 </html>
